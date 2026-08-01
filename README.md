@@ -38,6 +38,15 @@ python outcome_os.py --help
 
 ## Start a goal
 
+Bootstrap the included Medusa profile directly:
+
+```bash
+outcome-os-init-file examples/medusa-goal.json --path medusa-outcome
+cd medusa-outcome
+```
+
+Or define a goal manually:
+
 ```bash
 mkdir medusa-outcome && cd medusa-outcome
 outcome-os init "Medusa issue completion" \
@@ -121,15 +130,16 @@ PM Command Center → produce governance artifacts when a stage requires them
 ## Repository contents
 
 ```text
-outcome_os.py                  CLI, state machine, ledger, verifier, dashboard
-examples/medusa-goal.json      Ready-to-use Medusa completion goal
-examples/portfolio-backlog.json Import example
-scripts/run-medusa-loop.sh     Human/agent execution loop
-scripts/demo.sh                Reproducible local demonstration
-docs/OPERATING_MODEL.md        Roles, gates, escalation, weekly workflow
-docs/GOAL_DESIGN.md            How to write verifiable goals
-.github/workflows/ci.yml        Cross-platform syntax, test, package checks
-tests/test_outcome_os.py       Deterministic unit tests
+outcome_os.py                   CLI, state machine, ledger, verifier, dashboard
+profile_bootstrap.py            JSON goal-profile bootstrap command
+examples/medusa-goal.json       Ready-to-use Medusa completion goal
+examples/portfolio-backlog.json Portfolio OS import example
+scripts/run-medusa-loop.sh      Human/agent execution loop
+scripts/demo.sh                 Reproducible local demonstration
+docs/OPERATING_MODEL.md         Roles, gates, escalation, weekly workflow
+docs/GOAL_DESIGN.md             How to write verifiable goals
+.github/workflows/ci.yml         Cross-platform syntax, test, package checks
+tests/                           Deterministic controller and bootstrap tests
 ```
 
 ## Safety model
@@ -139,7 +149,7 @@ Outcome OS does not bypass authentication, tool permissions, protected branches,
 ## Development
 
 ```bash
-python -m compileall -q outcome_os.py
+python -m compileall -q outcome_os.py profile_bootstrap.py
 python -m unittest discover -s tests -v
 python -m build
 ```
