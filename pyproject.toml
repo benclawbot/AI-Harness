@@ -19,6 +19,7 @@ classifiers = [
 
 [project.scripts]
 outcome-os = "outcome_os:main"
+outcome-os-init-file = "profile_bootstrap:main"
 
 [tool.setuptools]
-py-modules = ["outcome_os"]
+py-modules = ["outcome_os", "profile_bootstrap"]
