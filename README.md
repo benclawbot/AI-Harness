@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/ai-harness-banner.svg" alt="AI Harness" width="100%" />
+</p>
+
 # Outcome OS — AI Harness
 
 Outcome OS is a local-first execution controller for one recurring problem: **AI can produce work, but a human still has to keep restating the goal, checking whether it is truly done, and deciding what happens next.**
